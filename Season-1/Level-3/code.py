@@ -28,14 +28,11 @@ class TaxPayer:
         # setting a profile picture is optional
         if not path:
             return None
-        
-        # defends against path traversal attacks
-        path = os.path.normpath(os.path.join(base_dir, path))
-        if base_dir != os.path.commonpath([base_dir, path]):
-            return None
-
+    
         # builds path
         prof_picture_path = os.path.normpath(os.path.join(base_dir, path))
+        if base_dir != os.path.commonpath([base_dir, prof_picture_path]):
+            return None
 
         with open(prof_picture_path, 'rb') as pic:
             picture = bytearray(pic.read())
@@ -48,15 +45,15 @@ class TaxPayer:
         tax_data = None
 
         # defends against path traversal attacks
-        path = os.path.normpath(os.path.join(base_dir, path))
-        if base_dir != os.path.commonpath([base_dir, path]):
+        safePath = os.path.normpath(os.path.join(base_dir, path))
+        if base_dir != os.path.commonpath([base_dir, safePath]):
             return None
 
-        if not path:
+        if not safePath:
             raise Exception("Error: Tax form is required for all users")
 
-        with open(path, 'rb') as form:
+        with open(safePath, 'rb') as form:
             tax_data = bytearray(form.read())
 
         # assume that tax data is returned on screen after this
-        return path
+        return safePath
