@@ -13,6 +13,8 @@ def source():
     TaxPayer('foo', 'bar').get_prof_picture(request.args["input"])
 ### Unrelated to the exercise -- Ends here -- Please ignore
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 class TaxPayer:
 
     def __init__(self, username, password):
@@ -25,14 +27,14 @@ class TaxPayer:
     def get_prof_picture(self, path=None):
         # setting a profile picture is optional
         if not path:
-            pass
-
+            return None
+        
         # defends against path traversal attacks
-        if path.startswith('/') or path.startswith('..') or path.startswith('.'):
+        path = os.path.normpath(os.path.join(base_dir, path))
+        if base_dir != os.path.commonpath([base_dir, path]):
             return None
 
         # builds path
-        base_dir = os.path.dirname(os.path.abspath(__file__))
         prof_picture_path = os.path.normpath(os.path.join(base_dir, path))
 
         with open(prof_picture_path, 'rb') as pic:
@@ -46,7 +48,8 @@ class TaxPayer:
         tax_data = None
 
         # defends against path traversal attacks
-        if path.startswith('/') or path.startswith('..') or path.startswith('.'):
+        path = os.path.normpath(os.path.join(base_dir, path))
+        if base_dir != os.path.commonpath([base_dir, path]):
             return None
 
         if not path:
