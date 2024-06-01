@@ -9,12 +9,13 @@ on:
 
 jobs:
   jarvis:
+    if: ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check for insecure actions
         run: |

@@ -51,7 +51,6 @@ _A GitHub Security Lab initiative, providing an in-repo learning experience, whe
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    - Scroll down and click the **Create repository** button at the bottom of the form.
-1. After your new repository is created and our GitHub Actions workflow has completed, you will notice a ❌  sign next to the initial commit, indicating a failing check. This is normal and you can ignore it. You will understand in Season-2/Level-1 why this happens.
 1. You can now proceed to the 🛠️ set up section.
 
 ## 🛠️ The set up
@@ -70,7 +69,7 @@ Optional: We recommend these free-of-charge additional extensions, but we haven'
 1. `github.copilot-labs` to receive AI-generated code explanations.
 1. `alexcvzz.vscode-sqlite` to visualize the SQL database created in Season-1/Level-4 and the effects of our exploits on its content.
 
-If you need assistance, don't hesitate to ask for help in our [GitHub Discussions](https://github.com/skills/secure-code-game/discussions) or on our [Slack](https://join.slack.com/t/ghsecuritylab/shared_invite/zt-2afhxkndc-3ZGRV1i2UMvCZ0DtXgqaQw), at the [#secure-code-game](https://ghsecuritylab.slack.com/archives/C05DH0PSBEZ) channel.
+If you need assistance, don't hesitate to ask for help in our [GitHub Discussions](https://github.com/skills/secure-code-game/discussions) or on our [Slack](https://gh.io/securitylabslack), at the [#secure-code-game](https://ghsecuritylab.slack.com/archives/C05DH0PSBEZ) channel.
 
 #### 💻 Local installation
 
