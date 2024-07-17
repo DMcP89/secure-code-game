@@ -9,7 +9,6 @@ on:
 
 jobs:
   jarvis:
-    if: ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
